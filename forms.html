@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Forms</title>
+    <script>
+
+        function click_calcular() {
+            const A = document.getElementById("ValorA").value;
+            const B = document.getElementById("ValorB").value;
+            const C = document.getElementById("ValorC").value;
+            
+            const delta = (B * B) - 4 * A * C;
+            if (delta < 0) {
+                document.getElementById("div").innerHTML = "Impossível encontrar os valores de x"
+            }
+            else if (delta > 0){
+                const x1 = -B + Math.sqrt(delta);
+                const x2 = -B - Math.sqrt(delta);
+                document.getElementById("div").innerHTML = `Os valores dos X's são: <br> X1: ${x1.toFixed(2)} <br> e X2: ${x2.toFixed(2)} `
+            }
+            
+        }
+
+        function click_apagar() {
+            document.getElementById("ValorA").value = "";
+            document.getElementById("ValorB").value = "";
+            document.getElementById("ValorC").value = "";
+        }
+    </script>
+
+</head>
+<body>
+    <form class="forms">
+        <h1>Calculadora de Baskará</h1>
+        <div>
+            <label for="ValorA">Valor A:</label><br>
+            <input type="number" id="ValorA" name=" "><br>
+        </div>
+        <div>
+            <label for="ValorB">Valor B</label><br>
+            <input type="number" id="ValorB" name=" "><br>
+        </div>
+        <div>
+            <label for="ValorC">Valor C</label><br>
+            <input type="number" id="ValorC" name=" "><br>
+        </div>
+        <div id="div2">
+            <input type="button" value="Calcular" onclick="click_calcular();">
+
+            <input type="button" value="Apagar" onclick="click_apagar();">
+        </div>
+        <div id="div">
+
+        </div>
+</body>
+</html>
