@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ONINPUT</title>
+</head>
+    <body>
+        <input type="number" id="numeroInput" oninput="Tabuada()">
+        <div id="tabuada"></div>
+    
+        <script>
+            function Tabuada() {
+                const numeroInput = document.getElementById('numeroInput');
+                const tabuadaDiv = document.getElementById('tabuada');
+                const numero = parseInt(numeroInput.value);
+    
+                if (!isNaN(numero)) {
+                    tabuadaDiv.innerHTML = '';
+    
+                    for (let i = 1; i <= 10; i++) {
+                        const resultado = numero * i;
+                        const paragrafo = document.createElement('p');
+                        paragrafo.textContent = `${numero} x ${i} = ${resultado}`;
+                        tabuadaDiv.appendChild(paragrafo);
+                    }
+                } else {
+                    tabuadaDiv.innerHTML = 'Digite um número válido.';
+                }
+            }
+        </script>
+    </body>
+    </html>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Colocar em negrito</title>
+    </head>
+    <body>
+        <input type="text" id="nomeInput" oninput="realcarNomes()">
+        <ul id="listaNomes">
+            <li>João</li>
+            <li>Claudio</li>
+            <li>Marcio</li>
+        </ul>
+    
+        <script>
+            function realcarNomes() {
+                const nomeInput = document.getElementById('nomeInput');
+                const listaNomes = document.getElementById('listaNomes');
+                const termo = nomeInput.value.toLowerCase();
+    
+                const nomes = listaNomes.getElementsByTagName('li');
+                for (let i = 0; i < nomes.length; i++) {
+                    const nome = nomes[i].textContent.toLowerCase();
+                    if (nome.includes(termo)) {
+                        nomes[i].innerHTML = nome.replace(termo, `<strong>${termo}</strong>`);
+                    } else {
+                        nomes[i].innerHTML = nome;
+                    }
+                }
+            }
+        </script>
+    </body>
+    </html>
+    
