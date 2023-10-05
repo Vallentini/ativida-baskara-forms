@@ -1,0 +1,23 @@
+
+body {
+    background-color: rgb(253, 181, 109);
+    margin: 0;
+    
+}
+
+input{
+    margin-top: 20px;
+    margin-left: 850px;
+    margin-bottom: 20px;
+    background-color: antiquewhite;
+}
+
+ul{
+    margin-left: 850px;
+}
+h1{
+    margin-left: 800px;
+}
+div{
+    padding-left: 900px;
+}
